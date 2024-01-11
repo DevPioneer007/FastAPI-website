@@ -1,0 +1,57 @@
+{% extends 'core/event.html' %}
+{% load applications_tags i18n rev static %}
+
+{% block custom_js %}<script type="text/javascript" src="{% static_rev 'js/applications.js' %}"></script>{% endblock %}
+
+{% block title %}{{ event.page_title }}{% endblock %}
+{% block description %}{{ event.page_description }}{% endblock %}
+
+{% block content %}
+<div class="container public-form">
+  <div class="row">
+    <div class="col-md-12" style="padding: 0px">
+      <h3 class="page-header">
+        {% blocktrans with title=event.page_title %}Edit email for {{ title }}{% endblocktrans %}
+      </h3>
+
+      <div class="col-md-7 stretch-form">
+        <div class="rsvp-buttons">
+          <a class="btn small" data-option="yes">{% trans 'Add a "RSVP: yes" link to email' %}</a>
+          <a class="btn small" data-option="no">{% trans 'Add a "RSVP: no" link to email' %}</a>
+          <a href="" target="_blank">{% trans "What's that?" %}</a>
+        </div>
+
+        <form action="" method="post">
+          {% csrf_token %}
+          {% include 'includes/_form.html' %}
+
+          {% if not email.sent %}
+            <input type="submit" name="save" value="{% trans "Save for later" %}" />
+            <input type="submit" name="send" value="{% trans "Save & send to recipients" %}" />
+          {% endif %}
+        </form>
+      </div>
+      <div class="col-md-5">
+          {% if not email.sent %}
+              <h4>{% trans "Email preview" %}</h4>
+              <div id="preview" style="white-space: pre-wrap;">{{ email.text|safe }}</div>
+          {% else %}
+              <p>
+                  {% blocktrans with sent=email.sent author=email.author num_rec=email.number_of_recipients %}
+                      This email was sent on {{ sent }} by {{ author }} to {{ num_rec }} recipients.
+                  {% endblocktrans %}
+              </p>
+              <p>
+                  <b>{% trans "Successfully sent emails:" %}</b> {{ email.successfuly_sent }}
+              </p>
+              <p>
+                  <b>{% trans "Emails that failed to sent:" %}</b> {{ email.failed_to_sent }}
+              </p>
+
+          {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

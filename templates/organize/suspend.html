@@ -1,0 +1,24 @@
+{% extends "global/base.html" %}
+{% load i18n rev static %}
+
+{% block content %}
+    <div class="container organize">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel">
+                    <h1>{% trans "Suspension of In-Person Workshop Applications" %}</h1>
+                    <p>
+                        {% blocktrans trimmed %}
+                            Please note that due to the Global Covid-19 Pandemic, we have suspended all in-person workshop applications.
+                            We have updated our Organiser Manual to support remote workshops as a potential alternative. Please
+                            consider applying for a remote workshop instead.
+                        {% endblocktrans %}
+                    </p>
+
+                    <p>{% trans "Any inconveniences caused are sincerely regretted." %}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

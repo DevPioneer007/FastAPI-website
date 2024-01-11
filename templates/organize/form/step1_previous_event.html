@@ -1,0 +1,88 @@
+{% extends 'global/base.html' %}
+{% load i18n rev static %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static_rev 'vendor/select2/css/select2.min.css' %}">
+<link rel="stylesheet" href="{% static_rev 'vendor/select2-bootstrap-theme/select2-bootstrap.min.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static_rev 'js/organize.js' %}"></script>
+<script src="{% static_rev 'vendor/select2/js/select2.min.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="container organize">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% include 'includes/_organize-progress.html' with active_step=3 %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <h1>{% trans "Application to organize a workshop" %}</h1>
+                <form novalidate previous-event-form action="" method="post">{% csrf_token %}
+                    {{ wizard.management_form }}
+
+                    {% if wizard.form.non_field_errors %}
+                        <ul class="error-list">
+                            {% for error in wizard.form.non_field_errors %}
+                                <li class="error">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <fieldset class="form-section">
+                        <legend class="form-section-heading{% if wizard.form.has_organized_before.field.required %} required{% endif %}">
+                            {% trans "Have you organized a Django Girls workshop before?" %}
+                        </legend>
+                        <p class="form-section-subhead">
+                            {% trans "If so, the form will be much shorter as we already know a lot about you! :)" %}
+                        </p>
+
+                        <div class="radio-wrapper">
+                            <ul class="narrow-options">
+                                {% for input in wizard.form.has_organized_before %}
+                                    <li>
+                                        {{ input.tag }}
+                                        <label for="{{ input.id_for_label }}">{{ input.choice_label }}</label>
+                                        {% if forloop.counter == 1 %}
+                                            {{ wizard.form.previous_event }}
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% if wizard.form.has_organized_before.errors %}
+                            <ul class="error-list narrow-options">
+                                {% for error in wizard.form.has_organized_before.errors %}
+                                    <li class="error">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </fieldset>
+                    <script type="text/javascript">
+                        $('#{{ wizard.form.previous_event.id_for_label }}').select2({
+                            theme: "bootstrap",
+                            placeholder: "{% trans "Choose event" %}"
+                        });
+                    </script>
+
+                    <div class="cta-wrapper">
+                        <button type="submit" class="cta">{% trans "Go to next step" %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

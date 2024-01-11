@@ -1,0 +1,24 @@
+{% extends 'global/base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{% trans "Page not found" %}</h2>
+
+                <p>{% trans "Sorry! The page you're looking for isn't available." %}</p>
+
+                {% url 'core:events' as events_url %}
+                <h3>{% blocktrans %}See all <a href="{{ events_url }}">upcoming events</a>.{% endblocktrans %}</h3>
+
+                {% url 'organize:index' as organise_url %}
+                <p>
+                    {% blocktrans trimmed %}
+                        <a href="{{ organise_url }}">Find out</a> about organizing a Django Girls workshop in your city.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

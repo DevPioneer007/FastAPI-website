@@ -1,0 +1,73 @@
+{% load i18n %}
+
+<div class="row">
+	<div class="col-md-4">
+		<p>
+			<b>{% trans "Do I need to know anything about websites or programming?" %}</b>
+		</p>
+		<p>
+          {% blocktrans trimmed %}
+			No! Workshops are for beginners. You don’t need to know anything about it.
+			However, if you have a little bit of technical knowledge (i.e. you know what HTML or CSS are) you still can apply!
+          {% endblocktrans %}
+		</p>
+	</div>
+
+	<div class="col-md-4">
+		<p>
+			<b>{% trans "I am not living in Germany, can I attend?" %}</b>
+		</p>
+		<p>
+          {% blocktrans trimmed %}
+			Of course! Workshops will be in English, so if you have no troubles with speaking and understanding English - you should apply.
+            If you need financial aid to get to Berlin or you need assistance with booking flights or hotel in Berlin - let us know.
+			We are willing to help you!
+          {% endblocktrans %}
+		</p>
+	</div>
+
+	<div class="col-md-4">
+		<p>
+			<b>{% trans "Should I bring my own laptop?" %}</b>
+		</p>
+		<p>
+          {% blocktrans trimmed %}
+			Yes. We have no hardware, so we expect you to bring your computer with you. 
+			It is also important for us that you will take home everything you’ll write and create during workshops.
+          {% endblocktrans %}
+		</p>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 30px">
+	<div class="col-md-4">
+		<p>
+			<b>{% trans "Do I need to have something installed on my laptop?" %}</b>
+		</p>
+		<p>
+          {% blocktrans trimmed %}
+			It would be helpful to have Django installed before workshops, but wouldn't
+			expect you to install anything on your own.We will make sure that one of our
+			coaches will help you out with this task.
+          {% endblocktrans %}
+		</p>
+	</div>
+
+	<div class="col-md-4">
+		<p>
+			<b>{% trans "Is EuroPython conference good for a total beginner?" %}</b>
+		</p>
+		<p>
+          {% blocktrans trimmed %}
+			As a workshop attendee you will get a free ticket to EuroPython - conference for Python programmers. 
+			Even though you are new to programming,conference is a good place to meet many interesting people 
+			in the industry and find inspiration.
+          {% endblocktrans %}
+		</p>
+	</div>
+
+	<div class="col-md-4">
+		<p><b>{% trans "Is food provided?" %}</b></p>
+		<p>{% trans "Yes. Thanks to EuroPython, snacks and lunch will be served during workshops." %}</p>
+	</div>
+</div>

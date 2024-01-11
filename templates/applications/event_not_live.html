@@ -1,0 +1,35 @@
+{% extends 'global/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ city|title }}</h2>
+            {% if past %}
+                <p>
+                    {% blocktrans trimmed %}
+                        The event for {{ city|title }} has already happened and the webpage is
+                        no longer live.
+                    {% endblocktrans %}
+                </p>
+            {% else %}
+                <p>
+                    {% blocktrans %}
+                        The event page for {{ city|title }} will be coming soon.
+                    {% endblocktrans %}
+                </p>
+            {% endif %}
+            <p>
+                {% blocktrans trimmed %}
+                    If you want to contact the organizers of this event, you can email them at
+                    <a href="mailto:{{ page_url }}@djangogirls.org">{{ page_url|lower }}@djangogirls.org</a>
+                {% endblocktrans %}
+            </p>
+
+            {% url 'core:events' as events_url %}
+            <h3>{% blocktrans %}See all other <a href="{{ events_url }}">upcoming events</a>.{% endblocktrans %}</h3>
+        </div>
+    </div>
+{% endblock content %}
+

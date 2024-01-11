@@ -1,0 +1,17 @@
+{% extends 'global/base.html' %}
+{% load i18n static %}
+
+{% block content %}
+	<div class="container">
+        <div class="row">
+            <h4>
+                {% blocktrans trimmed with currency=currency amount=amount %}
+                    Thank you for your contribution of {{ currency }}{{amount}}!
+                {% endblocktrans %}
+            </h4>
+            <hr>
+            <a class="myButton" href="{% url 'donations:index' %}">&#x2190;&nbsp;{% trans "Back to donation page" %}</a>
+        </div>
+	</div>
+
+{% endblock content %}

@@ -1,0 +1,7 @@
+{% for field in form %}
+<div class="row">
+    <div class="col-md-12">
+        {% include 'includes/_field.html' with field=field %}
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,1148 @@
+sans_font = Roboto
+serif_font = 'Lora'
+gray = #4A4A4A
+orange = #F7921D
+
+border-radius(n)
+    -webkit-border-radius n
+    -moz-border-radius n
+    border-radius n
+
+/*
+---------------------
+    Common styles
+---------------------
+*/
+
+html, body
+    height: 100%
+
+body
+    font: 18px serif_font
+    color: black
+    line-height: 29px
+    font-weight: 300
+
+h1, h2, h3, h4, h5
+    font-family: sans_font
+    color: black
+    font-weight: 300
+    font-size: 40px
+    line-height: 180%
+
+h2
+    font-size: 36px
+
+h3
+    font-size: 30px
+
+h4
+    font-size: 24px
+
+h5
+    font-size: 18px
+
+a
+    color: gray
+    text-decoration: underline
+
+    &:hover
+        color: gray
+        text-decoration: none
+
+form
+    input[type="email"], input[type="text"]
+        padding: 5px 10px
+        width: 260px
+        border-radius(3px)
+        border: 1px solid #E7E7E7
+        margin-right: 15px
+
+.btn, input[type="submit"]
+    background: orange
+    border: 0
+    color: white
+    font-family: sans_font
+    font-size: 18px
+    border-radius(3px)
+    padding: 5px 15px
+    font-weight: 300
+    text-decoration: none
+
+.btn
+    padding: 8px 20px
+    white-space: normal
+
+    &:hover
+        color: white
+
+.ical.btn
+    font-size: 12px
+    padding: 1px 5px
+    border-radius(3px)
+
+/*
+--------------------------
+-    Bootstrap new styles
+--------------------------
+*/
+
+.panel-default
+    border: 0
+    box-shadow: none
+
+    > .panel-heading
+        background: none
+        border: 0
+        padding: 0 0 10px 0
+
+        strong
+            font-weight: 400
+
+    .panel-body
+        padding: 10px 0
+
+
+.panel-feature-orange
+    border-color:#fbae55
+
+    > .panel-heading
+        color:#a15a09
+        background-color:#fbc281
+        border-color:#fbae55
+
+        + .panel-collapse > .panel-body
+            border-top-color:#fbae55
+
+        .badge
+            color:#fbc281
+            background-color:#a15a09
+
+    > .panel-footer + .panel-collapse > .panel-body
+        border-bottom-color:#fbae55
+
+.panel-feature-blue
+    border-color:#4ca3ce
+
+    > .panel-heading
+        color:#084765
+        background-color:#6fafce
+        border-color:#4ca3ce
+
+        + .panel-collapse > .panel-body
+            border-top-color:#4ca3ce
+
+        .badge
+            color:#6fafce
+            background-color:#084765
+
+    > .panel-footer + .panel-collapse > .panel-body
+        border-bottom-color:#4ca3ce
+
+.btn-blue
+  color:#fff
+  background-color:#19719c
+  border-color:#2b5D75
+
+/*
+------------------
+    Navigation
+------------------
+*/
+
+.navbar
+    margin: 20px 0
+    background: white
+    border: none
+    padding: 0 15px
+
+    .logo
+        float: left
+
+    .navbar-collapse
+        padding: 0
+        border: none
+
+    .navbar-nav
+        float: right
+        list-style-type: none
+        margin-bottom: 0
+        padding-left: 0
+
+        li
+            float: left
+            margin-left: 40px
+
+            a
+                color: orange
+                font-family: sans_font
+                text-decoration: none
+                text-transform: uppercase
+                font-weight: 500
+                font-size: 15px
+                padding: 24px 0
+
+                &:hover
+                    color: orange
+
+            &:first-child
+                margin-left: 0
+
+        .dropdown-menu
+            li
+                margin-left: 0
+
+                a
+                    padding: 3px 20px
+
+/*
+------------------------
+    Box with picture
+------------------------
+*/
+#box-with-picture
+    background: url('../img/global/mainphoto-04122015.jpg') 50% 0 no-repeat fixed
+    background-position: center -100px
+    background-size: cover
+
+    .black-canvas
+        background: rgba(0,0,0,0.6)
+        width: 100%
+        height: 100%
+
+    .container
+        padding: 120px 0
+        text-align: center
+
+    h1
+        font-family: serif_font
+        font-size: 48px
+        color: white
+        line-height: 55px
+        font-style: italic
+        margin-bottom: 20px
+
+    p
+        font-family: serif_font
+        font-size: 20px
+        color: #E7E7E7
+        line-height: 30px
+        font-style: italic
+
+
+/*
+------------------------
+    About
+------------------------
+*/
+#about
+    padding: 30px 0 0 0
+
+    h2
+        margin-top: 40px
+
+    h2:first-child
+        margin-top: 20px
+
+    .row
+        margin-bottom: 20px
+
+    iframe
+        margin-top: 80px
+        width: 100%
+
+    .newsletter
+        margin: 18px 0
+
+span.highlighted-number
+    background: rgba(255, 127, 0, 0.6)
+    padding: 3px 3px 3px 5px
+    margin-right: 5px
+    color: white
+
+/*
+------------------------
+    Events
+------------------------
+*/
+#events
+    h2
+        margin-bottom: 15px
+
+    .event
+        margin: 15px 15px 15px 15px
+        padding: 0
+        background: url('../img/global/krakow.png') no-repeat
+        background-size: cover
+        width: calc(33% - 30px)
+        height: 210px
+        text-align: center
+        color: white
+        font-style: italic
+
+        .overlay
+            height: 100%
+            width: 100%
+            background: rgba(0,0,0,0.5)
+            padding: 70px 0 0 0
+
+            &:hover
+                background: rgba(0,0,0,0.3)
+
+        p.city
+            font-size: 36px
+            line-height: 41px
+            margin-bottom: 0
+
+        span.date
+            font-size: 23px
+            line-height: 27px
+
+        p.credit
+            font-size: 12px
+            text-align: left
+            font-family: sans_font
+            font-style: normal
+            bottom: -5px
+            left: 10px
+            position: absolute
+            opacity: 0
+
+        &:hover
+            p.credit
+                opacity: 1
+
+    .upcoming-events
+        .row-container
+            max-height: 450px
+            overflow: hidden
+
+        .show-more
+            width: 100%
+            height: 100px
+            position: relative
+            float: left
+            margin-top: -55px
+            padding-top: 63px
+            text-align: center
+            font-size: 26px
+            font-style: italic
+            background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 53%); /* FF3.6+ */
+            background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 53%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 53%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 53%); /* IE10+ */
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 53%); /* W3C */
+
+            a
+                float: none
+                margin: 0
+
+#map
+    height: 580px
+    margin-top: 30px
+
+/*
+-----------------------------
+    Organize & Newsletter
+-----------------------------
+*/
+#organize
+    margin-top: 30px
+
+    .row
+        margin-top: 10px
+
+    .row:nth-child(2)
+        margin-bottom: 30px
+
+    .centered
+        text-align: center
+
+/* Campaign Monitor Archives */
+.newsletter-archive
+    margin-top: 15px
+
+    ul
+        list-style-type: none
+        padding: 0
+
+        li
+            padding: 0 0 15px 0
+            font-family: sans_font
+            font-size: 14px
+
+            a
+                text-decoration: none
+                color: orange
+                font-family: serif_font
+                font-size: 20px
+
+/* Mailchimp Archives */
+.display_archive
+    margin-top: 20px
+
+    a
+        text-decoration: none
+        color: orange
+        font-family: serif_font
+        font-size: 20px
+
+.campaign
+    font-family: Roboto
+    font-size: 14px
+    margin-top: 15px
+    line-height: 125%
+
+/*
+-------------
+    Story
+-------------
+*/
+#story, #stories
+    margin-top: 60px
+
+    .row
+        margin: 15px -15px
+
+        .girl
+            height: 255px
+            width: 255px
+            padding: 0
+            margin: 0
+            background-size: cover
+            background-position: center center
+            background-repeat: no-repeat
+            margin: 0 15px
+
+            .overlay
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: rgba(0,0,0,0.5)
+                padding-top: 45%
+                text-align: center
+                color: white
+                font-style: italic
+                font-size: 30px
+                opacity: 0
+
+                &:hover
+                    opacity: 1
+
+#stories
+    margin-top: 0
+
+    .row
+        margin: 30px 0
+
+/*
+------------------
+    Supporters
+------------------
+*/
+#supporters
+    margin-bottom: 30px
+    .row
+        margin: 30px -15px
+
+        .col-md-3
+            text-align: center
+            line-height: 80px
+
+            img
+                max-width: 80%
+
+/*
+------------------
+    Resources
+------------------
+*/
+#resources
+
+    .row
+        margin-bottom: 30px
+
+        .col-md-6
+            h3
+                margin-bottom: 15px
+            .cover
+                float: left
+                margin-right: 30px
+
+            .info
+                .btn
+                    margin-right: 15px
+                    float: left
+                iframe
+                    margin-top: 10px
+
+    .row:nth-child(2)
+        margin-bottom: 60px
+
+/*
+--------------------
+    Organize-full
+--------------------
+*/
+.organize-progress
+    margin: 0 auto
+    max-width: 1036px
+    padding: 40px 0
+
+    .steps
+        display: flex
+        list-style-type: none
+        margin: 0
+        padding: 0
+        position: relative
+
+    .step
+        color: rgba(247, 146, 29, .5)
+        flex: 1
+        font-family: sans_font
+        font-size: 16px
+        padding-bottom: 30px
+        text-align: center
+        text-transform: uppercase
+
+        @media screen and (min-width: 767px)
+            position: relative
+
+        &::before,
+        &::after
+            content: ''
+            display: block
+            position: relative
+
+        // Line
+        &::before
+            background-color: rgba(247, 146, 29, .5)
+            height: 2px
+            left: -50%
+            margin: 0 0 -2px
+            top: 7.5px
+            width: 100%
+
+        &:first-child::before
+            display: none
+
+        // Circle
+        &::after
+            background: white
+            border: 2px solid rgba(247, 146, 29, .5)
+            border-radius(50%)
+            height: 17px
+            margin: 0 auto 15px
+            top: 0
+            width: 17px
+            z-index: 2
+
+        .text
+            display: block
+            left: 0
+            position: absolute
+            right: 0
+            bottom: 0%
+
+        &.active,
+        &.complete
+            color: orange
+
+            &::before,
+            &::after
+                background-color: orange
+                border-color: orange
+
+        @media screen and (max-width: 766px)
+            &:not(.active) .text
+                display: none
+
+.organize
+    .panel
+        background-color: #f9f7f7
+        padding: 6% 8.6%
+
+        > :first-child
+            margin-top: 0
+
+        &.narrow
+            padding: 20px
+
+    h1
+        font-family: serif_font
+        font-size: 36px
+        line-height: 1.94
+        margin: 0
+        text-align: center
+
+    a
+        color: orange
+
+    p
+        line-height: 1.94
+        margin: 36px 0
+
+    fieldset
+        margin-bottom: 50px
+
+    legend
+        border: 0 none
+        display: block
+        font-size: inherit
+        margin-bottom: 10px
+
+    .form-section
+        margin-top: 40px
+
+    .form-section-heading
+        font-size: 20px
+        margin: 0
+        padding: 0
+
+    .form-section-subhead
+        color: #646464
+        font-size: 14px
+        margin: 0 0 20px
+
+    .linked-select
+        margin-left: .8em
+
+    .narrow-options
+        margin-left: auto
+        margin-right: auto
+        max-width: 800px
+        padding: 0
+
+    ul
+        list-style-type: none
+        margin-bottom: 0
+
+        &.row
+            padding: 0
+
+    li
+        line-height: 35px
+        margin-bottom: 15px
+
+    .bulleted
+        list-style-type: none
+
+        &.narrow
+            padding: 0
+
+        li
+            align-items: baseline
+            display: flex
+
+            &::before
+                content: ''
+                background: orange
+                border-radius: 50%
+                display: block
+                flex-shrink: 0
+                height: 9px
+                width: 9px
+
+            > :first-child
+                padding-left: .8em
+
+    label
+        font-weight: normal
+        line-height: 35px
+        margin: 0
+        padding-left: .8em
+
+    .checkbox-wrapper, .radio-wrapper
+        align-items: baseline
+        display: flex
+
+        input[type="checkbox"], input[type="radio"]
+            flex-shrink: 0
+            flex-grow: 0
+        label
+            vertical-align: top
+            max-width: 90%
+
+    .radio-wrapper
+        label
+            vertical-align: top
+            max-width: 60%
+
+    .radio-wrapper
+        .select2-container--bootstrap
+            display: inline-block
+            max-width: 60%
+            font-size: 14px
+
+      .workshop
+        .select2-container--bootstrap
+            max-width: 100%
+
+
+    .required
+        &::after
+            content: " *"
+            color: red
+
+    .compact-label
+        color: #646464
+        display: block
+        font-family: sans_font
+        font-size: 12px
+        padding: 0
+        text-transform: uppercase
+
+    .compact-input
+        border-color: #cdcbcb
+        display: block
+        font-size: 14px
+        line-height: 1.71
+        padding: 7px 12px
+        width: 100%
+
+    .add-organizer
+        margin: 20px 0 0
+        text-align: center
+
+    .icon-button
+        background: transparent
+        border: 0 none
+        padding: 0
+
+        svg
+            display: block
+
+    .error-list
+        padding: 0
+
+        li
+            margin: 10px 0 0
+
+    .error
+        color: #ef4836
+
+    .cta-wrapper
+        margin-top: 75px
+        text-align: center
+
+    .cta
+        background: orange
+        border: 0 none
+        border-radius(3px)
+        color: #ffffff
+        display: inline-block
+        font-family: sans_font
+        font-size: 24px
+        margin: 0
+        padding: 10px 20px
+        text-align: center
+        text-decoration: none
+
+        &:disabled
+            background: rgba(247, 146, 29, 0.4)
+
+    .tight-bottom
+        margin-bottom: 15px
+
+    .tight-top
+        margin-top: 15px
+
+.select2-results__option
+    font-size: 14px
+    line-height: 17px
+
+
+.organize-landing
+    h1
+        font-family: sans_font
+        font-size: 36px
+        font-style: normal
+        text-align: left
+
+    h2
+        font-size: 30px
+
+    .narrow h2
+        font-size: 26px
+
+    p
+        margin: 25px 0
+
+    .cta
+        margin: 25px 0
+
+        @media screen and (min-width: 1000px)
+            font-size: 23px
+            padding-left: 10px
+            padding-right: 10px
+            width: 100%
+
+    blockquote
+        border: 0 none
+        margin-bottom: 55px
+        margin-top: 35px
+        padding: 0
+
+        img
+            border-radius: 50%
+            display: block
+            margin: 0 auto
+            max-width: 100%
+
+        cite
+            display: block
+            margin-top: 18px
+
+    .media-blocks
+        h2
+            margin-bottom: 18px
+
+        p
+            margin: 15px 0
+
+/*
+--------------------
+    Support us
+--------------------
+*/
+#support
+    margin: 60px 0
+
+    .support-stats
+        margin: 30px 0 0 0
+        font-family: sans_font
+        font-size: 24px
+
+        span
+            font-weight: 400
+
+    .partnership
+        margin-top: 30px
+        font-size: 16px
+
+    .support-bar
+        width: 90%
+        background: #F9F7F7
+        height: 50px
+        border-radius: 3px
+        margin: 30px 0
+
+        .pledge
+            background: #00B16A
+            height: 50px
+            border-radius: 3px
+            color: white
+            font-family: sans_font
+            padding: 10px 0 10px 20px
+
+
+/*
+--------------
+    Footer
+--------------
+*/
+.page-wrap
+    min-height: 100%
+    margin-bottom: -300px
+
+    &:after
+        content: ""
+        display: block
+
+footer, .page-wrap:after
+    height: 300px
+
+footer
+    background: #F9F7F7
+    padding: 65px 0 0 0
+    margin-top: 90px
+
+    .row
+        margin: 0
+
+        .col-md-2
+            p
+                text-transform: uppercase
+                font-family: sans_font
+                color: orange
+                font-size: 18px
+                line-height: 21px
+
+                a
+                    text-decoration: none
+                    color: orange
+            ul
+                list-style-type: none
+                padding: 0
+
+                li
+                    margin-left: 0
+                    font-size: 16px
+                    line-height: 28px
+                    color: gray
+
+                    a
+                        text-decoration: none
+
+
+/*
+---------------------
+    Annual report
+---------------------
+*/
+#annual-report
+    margin: 60px 0 0 0
+    font-family: serif_font
+    font-size: 18px
+    line-height: 180%
+    color: black
+    overflow-x: hidden
+
+    ::selection
+        text-shadow: none
+        background: orange
+        color: #fff
+    .report-head
+        text-align: center
+        img
+            width: 100%
+            max-width: 500px
+    .wrap
+        background: #F9F7F7
+        padding-top: 30px
+        padding-bottom: 75px
+        margin: 30px
+        .row
+            margin: 0
+    h1, h2, h3, h4, h5
+        font-family: serif_font
+        margin: 40px 0 20px 0
+    h1
+        font-size: 46px
+        margin: 20px 0 40px 0
+        font-weight: bold
+    h2
+        text-align: center
+    a
+        color: orange
+    span
+        background: rgba(255, 127, 0, 0.6)
+        padding: 3px 3px 3px 5px
+        margin-right: 5px
+        color: white
+    p
+        margin-bottom: 15px
+    .centered
+        text-align: center
+    table
+        width: 100%
+        font-size: 16px
+        margin-bottom: 40px
+        margin-top: 20px
+        thead
+            background: rgba(255, 127, 0, 0.6)
+            color: white
+        td
+            padding: 2px 15px
+            border: 1px solid rgba(255, 127, 0, 0.6)
+        tr
+            border: 1px solid rgba(255, 127, 0, 0.6)
+        tfoot
+            background: #F9F7F7
+    ul
+        li
+            margin-bottom: 15px
+    .seasons
+        padding-top: 30px
+        padding-bottom: 30px
+        .season
+            font-style: serif_font
+            font-size: 160px
+            line-height: 160px
+            padding: 20px 0 0 0
+            color: orange
+            text-align: center
+        ul
+            padding-left: 0
+
+    .success-story
+        padding-top: 30px
+        padding-bottom: 30px
+        .col-md-3
+            img
+                width: 100%
+                border-radius: 50%
+        .col-md-9
+            padding-top: 15px
+
+    hr
+        border-color: orange
+        border-width: 10px
+        width: 10%
+
+    .sponsors
+        img
+            height: 80px
+            margin: 20px 0
+        p
+            margin-bottom: 30px
+    #map
+        height: 400px
+        margin-top: 30px
+
+    @media screen and (min-width: 766px)
+        blockquote
+            border: 0
+            padding: 0
+            font-style: italic
+            font-size: 24px
+            line-height: 30px
+        blockquote:before
+            content: "“"
+            display: block
+            color: orange
+            font-size: 112px
+            line-height: .2
+            font-weight: 800
+            margin-top: 60px
+            font-style: normal
+            font-family: serif_font
+
+/*
+---------------------
+    Text Pages
+---------------------
+*/
+#textonly-pages
+    font-size: 18px
+    line-height: 180%
+    color: black
+    overflow-x: hidden
+
+    h1
+        font-size: 32px
+        margin: 20px 0 40px 0
+        font-weight: bold
+        text-align: center
+    a
+        color: orange
+    p
+        margin-bottom: 15px
+    .important
+        text-align: center
+        font-weight: bold
+        font-size: 22px
+    ul
+        li
+        margin-bottom: 15px
+
+/*
+---------------------
+    Responsiveness
+---------------------
+*/
+@media (max-width: 1024px)
+    nav
+        ul
+            li
+                margin-left: 30px
+
+    #events
+        .row
+            .event
+                width: calc(50% - 30px)
+                float: left
+
+    #supporters
+        .row
+            .col-md-3
+                width: calc(50% - 30px)
+                float: left
+
+    footer
+        padding-top: 50px
+        .row
+            .col-md-3
+                float: left
+                width: calc(50% - 30px)
+                margin-bottom: 30px
+
+    footer, .page-wrap:after
+        height: 480px
+
+    .page-wrap
+        margin-bottom: -480px
+
+
+@media (max-width: 725px)
+    .navbar
+        .navbar-nav
+            float: none
+            margin-left: 20px
+
+            li
+                float: none
+                margin-left: 0
+
+                a
+                    padding: 14px 0
+
+    #box-with-picture
+        height: auto
+        background-position: center center
+
+        .container
+            padding: 20px
+
+            h1
+                font-size: 30px
+                line-height: 36px
+            p
+                font-size: 18px
+                line-height: 22px
+
+
+    #about
+        .gallery
+            display: none
+
+    #events
+        .row
+            .event
+                width: 90%
+
+    #organize
+        form
+            input[type="text"], input[type="email"]
+                margin-bottom: 15px
+
+    #supporters
+        .row
+            .col-md-3
+                width: 90%
+
+    footer
+        padding-top: 50px
+        .row
+            .col-md-3
+                width: 90%
+                margin-bottom: 30px
+
+    footer, .page-wrap:after
+        height: 900px
+
+    .page-wrap
+        margin-bottom: -900px
+
+
+.post-content
+    font-size: 16px
+    margin-bottom: 25px
+
+.also-available
+    font-size: 90%
+    font-style: italic
+
+@import "common"

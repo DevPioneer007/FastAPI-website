@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<p>{% trans "Hi there!" %}</p>
+
+<p>{% trans "Congrats! You're now a Django Girls organizer, so awesome! Here is access to your website:" %}</p>
+
+<p>{% blocktrans with page_url=event.page_url %}Your website address is https://djangogirls.org/{{ page_url }}{% endblocktrans %}</p>
+
+<p>
+{% blocktrans trimmed %}
+  Login here:<br />
+  https://djangogirls.org/admin/
+{% endblocktrans %}
+</p>
+
+<p>
+{% blocktrans with email=user.email %}
+  Email: {{ email }}<br />
+  Password: {{ password }}
+{% endblocktrans %}
+</p>
+
+<p>{% trans "Here you can find instructions on editing website: https://organize.djangogirls.org/website/" %}</p>
+
+<p>
+{% blocktrans trimmed with email=event.email %}
+    Your event's email is {{ email }}. Ask the main organizer of you event
+    for password and instructions to access it.
+{% endblocktrans %}
+</p>
+
+<p>{% trans "We also invited you to Django Girls Slack, where we chat, communicate and meet each other!" %}</p>
+
+<p>
+{% blocktrans trimmed %}
+  You can contact hello@ if you need assistance but it's usually faster to check <a href="https://djangogirls.slack.com/messages/general/">Slack channel</a> - there are more people that can help you! :)* 
+{% endblocktrans %}
+</p>
+
+<p>
+  {% trans "Hugs, rainbows and sunshines!" %}<br />
+  Django Girls
+</p>

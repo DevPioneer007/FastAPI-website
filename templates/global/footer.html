@@ -1,0 +1,70 @@
+{% load i18n %}
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <p>Django Girls</p>
+                <ul>
+                    <li><a href="{% url 'core:faq' %}">{% trans "FAQ" %}</a></li>
+                    <li><a href="{% url 'core:foundation' %}">{% trans "Foundation" %}</a></li>
+                    <li><a href="{% url 'core:newsletter' %}">{% trans "Newsletter" %}</a></li>
+                    <li><a href="http://gitter.im/DjangoGirls/tutorial"><strong>{% trans "Chat with us!" %}</strong></a></li>
+                    <li><a href="{% url 'coc_legacy' lang=LANGUAGE_CODE|default:"en" %}">{% trans "Code of Conduct" %}</a></li>
+                    <li><a href="{% url 'contact:landing' %}">{% trans "Contact" %}</a></li>
+                    <li><a href="{% url 'jobboard:index' %}">{% trans "Job Board" %}</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <p>{% trans "Support us" %}</p>
+                <ul>
+                    <li><a href="{% url 'donations:index' %}">{% trans "Make a donation" %}</a></li>
+                    <li><a href="https://www.patreon.com/djangogirls">{% trans "Donate on Patreon" %}</a></li>
+                    <li><a href="{% url 'core:contribute' %}">{% trans "Contribute" %}</a></li>
+                    <li><a href="https://drive.google.com/file/d/1cp774iWVbU5_GcpsUG4Ya9F-RAN8EWiT/view?usp=sharing">{% trans "Sponsor us" %}</a></li>
+                    <li><a href="{% url 'donations:sponsors' %}">{% trans "Our Sponsors" %}</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <p>{% trans "Community" %}</p>
+                <ul>
+                    <li><a href="http://facebook.com/djangogirls">Facebook</a></li>
+                    <li><a href="http://twitter.com/djangogirls">Twitter</a></li>
+                    <li><a href="http://github.com/djangogirls">Github</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <p>{% trans "Resources" %}</p>
+                <ul>
+                    <li><a href="https://tutorial.djangogirls.org/">{% trans "Tutorial" %}</a></li>
+                    <li><a href="https://organize.djangogirls.org/">{% trans "Organizer's Manual" %}</a></li>
+                    <li><a href="https://coach.djangogirls.org/">{% trans "Coaching Guide" %}</a></li>
+                    <li><a href="https://tutorial-extensions.djangogirls.org/">{% trans "Tutorial Extensions" %}</a></li>
+                    <li><a href="https://github.com/DjangoGirls/resources">{% trans "Graphics" %}</a></li>
+                </ul>
+            </div>
+
+             <div class="col-md-2">
+                <p>Website</p>
+                <ul>
+                    <li><a href="{% url 'core:terms-conditions' %}">{% trans "Terms & Conditions" %}</a></li>
+                    <li><a href="{% url 'core:privacy-cookies' %}">{% trans "Privacy & Cookies" %}</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <p>♥</p>
+                <ul>
+                    <li>{% blocktrans %}<b>{{ future_events_count }}</b> upcoming events{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<b>{{ past_events_count }}</b> past events{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<b>{{ applicants_sum }}</b> applicants{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<b>{{ attendees_sum }}</b> attendees{% endblocktrans %}</li>
+                    <li>{% blocktrans %}<b>{{ countries_count }}</b> countries{% endblocktrans %}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
